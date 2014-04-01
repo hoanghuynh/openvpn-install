@@ -68,7 +68,7 @@ if [ -e /etc/openvpn/server.conf ]; then
 			sed -i "s|cert client.crt|cert \"$CLIENT@$HOSTNAME.crt\"|" "$CLIENT"@$HOSTNAME.conf
 			sed -i "s|key client.key|key \"$CLIENT@$HOSTNAME.key\"|" "$CLIENT"@$HOSTNAME.conf
 		   	# Create one file for ios (openvpn app), you just mail ios.ovpn for yours and then open it from iPhone;)
-			cp "$CLIENT"@$HOSTNAME.conf ios.ovpn
+			cp "$CLIENT"@$HOSTNAME.conf ios@"$CLIENT".ovpn
 			sed -i.bac -n '/BEGIN CERTIFICATE/,/END CERTIFICATE/p' "$CLIENT"@$HOSTNAME.crt
 			sed -i -n -e '{/^#/d; /^\;/d; /^\s*$/d; /^ca/d; /^cert/d; /^key/d; p;}' ios@"$CLIENT".ovpn
 			sed -i '$ a\<ca>' ios@"$CLIENT".ovpn
@@ -246,7 +246,7 @@ else
 	sed -i "s|cert client.crt|cert \"$CLIENT@$HOSTNAME.crt\"|" "$CLIENT"@$HOSTNAME.conf
 	sed -i "s|key client.key|key \"$CLIENT@$HOSTNAME.key\"|" "$CLIENT"@$HOSTNAME.conf
 	# Create one file for ios (openvpn app), you just mail ios.ovpn for yours and then open it from iPhone;)
-	cp "$CLIENT"@$HOSTNAME.conf ios.ovpn
+	cp "$CLIENT"@$HOSTNAME.conf ios@"$CLIENT".ovpn
 	sed -i.bac -n '/BEGIN CERTIFICATE/,/END CERTIFICATE/p' "$CLIENT"@$HOSTNAME.crt
 	sed -i -n -e '{/^#/d; /^\;/d; /^\s*$/d; /^ca/d; /^cert/d; /^key/d; p;}' ios@"$CLIENT".ovpn
 	sed -i '$ a\<ca>' ios@"$CLIENT".ovpn
