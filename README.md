@@ -15,3 +15,4 @@ There are reliable providers where you can get a little VPS for even less than o
 
 - [Low End Box](http://lowendbox.com/)
 - [Digital Ocean (Hourly charged, instant VPS creation and deletion)](https://www.digitalocean.com/)
+- [Digital Ocean with $10 free credit](https://www.digitalocean.com/?refcode=b8ca6081da2d)
